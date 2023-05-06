@@ -8,8 +8,12 @@ Step 2: Setup webserver
 https://grobid.readthedocs.io/en/latest/Grobid-service/
 Failed: 2023.May.06: problem of server
 
-Step 2: Use batch mode
+Step 2: Use batch mode (Not using such option)
 https://grobid.readthedocs.io/en/latest/Grobid-batch/
+
+Step 3: setup python client
+https://github.com/kermitt2/grobid_client_python
+
 
 
 

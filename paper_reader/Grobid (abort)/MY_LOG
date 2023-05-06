@@ -1,0 +1,43 @@
+=======2023.May.6=======
+
+I am currently on stage (1), and I plan to use Grobid's code.
+https://github.com/kermitt2/grobid
+
+Install Grobid need to install wget, install wget need to install homebrew, takes forever
+Also have to install JVM8 (my JVM16 doesn't work), and set it to be my default jdk
+https://medium.com/@devkosal/switching-java-jdk-versions-on-macos-80bc868e686a
+met trouble: my computer is M1 chip
+https://stackoverflow.com/questions/73633050/installing-jvm-8-on-mac-with-m1-chip
+met trouble: when running ./gradlew run
+gradlew8.0 doesn't support some features, it's out of my ability to configure it now.
+
+So I will try to use batch mode, doesn't support multithreading thou...
+When using the batch mode, met problem: XXX commend not found. Solved by:
+(1) find java executable's path: which java
+(2) add this path to $PATH: source <path_to_shell_config_file>
+
+Still met problem: seems to do with x86_64 chip and arm64 chip.
+Try to run it on QEMU virtual machine that emulate x86_64.
+https://www.howtogeek.com/devops/how-to-use-qemu-to-boot-another-os/
+Met problem: no bootable device
+Solve: ubuntu iso image have problem, go to official website
+Met Problem: Stuck at install Ubuntu selection
+Solve: must give more memory: "-m 2G" at least
+Met Problem: progressed a bit, and then still stuck
+Give up on emulation now.
+
+Try aquarium computer now...
+It worked, should have started with that...
+Now do client:
+Met problem: Try to setup.py install, but aquarium computer don't allow setup
+Solve: Used a python virtual machine
+Met problem: Try to use "grobid --input ....", got permission denied
+Solve: sudo, but it's aquarium computer, can't sudo
+
+Try batch mode for aquarium computer......
+Met problem: java: File exists. It runs but there is no return. And my original pdf is gone
+So far, give up Grobid, look for a new way.
+
+Failed too many times. Could work on a normal x86_64 computer, not working now.
+I can't solve the problem now. Give up on this embedding for now.
+
