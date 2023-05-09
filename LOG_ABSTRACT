@@ -1,0 +1,41 @@
+=======2023.May.6=======
+The first goal is to set up a simple content based recommender system.
+My first approach is:
+(1) convert a research paper pdf into meta datas
+(2) embed these meta datas into vector using openAI's embedding service
+(3) recommend to user using similarity of the vectors
+
+Spent the whole day trying to use grobid, didn't work in the end. look at MY_LOG under grobid.
+
+The next possibility is GPT model.
+
+token for github 90 days: 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
+
+=======2023.May.7=======
+Today tried to use GPT2, succeeded,but the generated text is not good, and the response is really slow, so give up.
+Before I set up GPT2, I wrote a pdf to single string py script,
+Next thing to try is: CERMINE, Core, CrossRef Metadata Search, ParsCit, Neural-ParsCit
+Possibility for summarization: TextRank, Gensim
+I will start with CERMINE. It works, see under paper_reader/CERMINE/MY_LOG
+Now I have CERMINE "zone" file, now I need to see how to embed it. Hypothetically I can first parse it into a tabel, but
+I will try first just pass it in as a zone file (or string)
+
+Now I will start with openAI
+
+=======2023.May.9=======
+Today I set up the framework of embedder: the embedder will first split long text into segments because of the embedding
+ length constrain, then it will use pooling methods to get the embed for the whole paper.
+Another possibility could be summarize the paper, and then embed the summarized text. But there is no reason to use that
+for now.
+
+I think I should set a naming convention for the project:
+package: ??? in the future all cap?
+py file: all lower case connect with _
+class name: camel convention, cap all first word: e.g. PaperParser
+class instance: all lower case connect with _
+
+
+
+
+
+
