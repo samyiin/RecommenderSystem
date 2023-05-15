@@ -1,0 +1,105 @@
+=======2023.May.6=======
+
+I am currently on stage (1), and I plan to use Grobid's code.
+https://github.com/kermitt2/grobid
+
+Install Grobid need to install wget, install wget need to install homebrew, takes forever
+Also have to install JVM8 (my JVM16 doesn't work), and set it to be my default jdk
+https://medium.com/@devkosal/switching-java-jdk-versions-on-macos-80bc868e686a
+met trouble: my computer is M1 chip
+https://stackoverflow.com/questions/73633050/installing-jvm-8-on-mac-with-m1-chip
+met trouble: when running ./gradlew run
+gradlew8.0 doesn't support some features, it's out of my ability to configure it now.
+
+So I will try to use batch mode, doesn't support multithreading thou...
+When using the batch mode, met problem: XXX commend not found. Solved by:
+(1) find java executable's path: which java
+(2) add this path to $PATH: source <path_to_shell_config_file>
+
+Still met problem: seems to do with x86_64 chip and arm64 chip.
+Try to run it on QEMU virtual machine that emulate x86_64.
+https://www.howtogeek.com/devops/how-to-use-qemu-to-boot-another-os/
+Met problem: no bootable device
+Solve: ubuntu iso image have problem, go to official website
+Met Problem: Stuck at install Ubuntu selection
+Solve: must give more memory: "-m 2G" at least
+Met Problem: progressed a bit, and then still stuck
+Give up on emulation now.
+
+Try aquarium computer now...
+It worked, should have started with that...
+Now do client:
+Met problem: Try to setup.py install, but aquarium computer don't allow setup
+Solve: Used a python virtual machine
+Met problem: Try to use "grobid --input ....", got permission denied
+Solve: sudo, but it's aquarium computer, can't sudo
+
+Try batch mode for aquarium computer......
+Met problem: java: File exists. It runs but there is no return. And my original pdf is gone
+So far, give up Grobid, look for a new way.
+
+Failed too many times. Could work on a normal x86_64 computer, not working now.
+I can't solve the problem now. Give up on this embedding for now.
+
+
+=======2023.May.7=======
+Today tried to use GPT2, everything works so far...
+Used PyPDF2 to read the pdf into a single string
+Met Problem: if I am feeding to gpt2 a whole research paper's string, it will exceed the max number of words.
+Solution: Truncate into small segments, but the time it takes is huge. Let's try to just find the authors and title.
+Met Problem: GPT2's response doesn't seem to be correct, it is indeed a response
+Solution: Give up gpt2, next plan
+Also GPT's information extraction is too slow, aborted
+
+https://github.com/CeON/CERMINE
+Try using standalone app
+https://mvnrepository.com/artifact/pl.edu.icm.cermine/cermine-impl/1.13
+It works!!!!!! OMG should have started with this. All we needs to do is just download the jar file, and use the prompt.
+Use -output zone, will parse the paper into all the sections with labels like title and stuff.
+
+Shortcut: enter /CERMINE/ directory, then type this:
+java -cp cermine-impl-1.13-jar-with-dependencies.jar pl.edu.icm.cermine.ContentExtractor -outputs zones -path ../../papers_pdf
+
+=======2023.May.9=======
+Now that everything works, we still need some post processing, like changing '\n' to ' ' etc.
+Including:
+    Removing special characters
+    Removing stop words
+    Converting to lowercase
+    Stemming or lemmatization
+    Handling contractions
+    Removing HTML tags or other irrelevant details
+    Handling special characters
+Should this be the responsibility of paper reader (post processing) or embedding methods (preprocessing?)?
+I think half half, hard to tell, some of them is the paper reader's, some is specific to the embedder.
+I will provide as functionality of the paper readers.
+
+One thing might need to change later: now we are placing papers under a directory, and later we might have a data base,
+then we will have to change it to query form the database.
+
+Met Problem and Solution: if want os.system to run "cd" cmd, must pay attention to cwd. cuz if you are running another
+ file that called this method, then the cwd is not the same. So run two commend at the same os.system(), separate with
+  ";" so that it will only open one terminal two run both the command.
+
+=======2023.May.10=======
+*********************************************
+*******                              ********
+*******  First edition summarize     ********
+*******                              ********
+*********************************************
+In the first edition, I only setup one main way to read pdf into attribute dict, CERMINE. And CERMINE will label the
+file into "zones", aka things such as "title", "author", "reference" etc. And I will return the paper as one single
+ string, so the returned attribute dictionary of the paper will have only one attribute: "content". Later we might need
+ to parse this single string into many strings for each attributes such as "title", "author", "citation", etc.
+But I feel like I need to at least extract the title of the paper from it for the database in first edition.
+And later Title + author for used based filtering, title + author + citation for item based filtering...
+
+Today another change: so paper_reader in th future will have a different interface.
+It will take a directory of papers, and output to a given directory saved file of attribute dictionary, using pickles?
+Or use json?
+
+Sadly, seems like semantic scholar has already done a good job parsing the papers into meta data, we will just pend this
+ part. Maybe later I can use it to parse the paper's downloaded pdf, because I don't think semantic scholar have done
+ that. just have to figure out how to read the semantic scholar's parsed papers.
+
+

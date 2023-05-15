@@ -7,15 +7,12 @@ class AbstractSegmentEmbedder(ABC):
     def __init__(self, text_len_limit):
         self.segment_length = text_len_limit
 
-    def parse_paper(self, paper_fp) -> Dict:
-        """pick a parser, the parser will return attribute dictionary"""
-        pass
 
     def _embed_text(self, text_string) -> np.ndarray:
         """all subclass must implement this method"""
         pass
 
-    def embed_paper(self, paper_fp):
+    def embed_paper(self, paper_attribute_dic):
         """all subclass must implement this method"""
         pass
 

@@ -1,18 +1,1 @@
-I separate the model into the following disjunctive sections:
 
---------------------------------------------------paper reader----------------------------------------------------------
-This module is a tool that will take a pdf (of research paper), and read it into text, and parse the text into attribute
- dictionary, attributes like "title", "author", "date", "reference" etc... it's API is the "parse" method.
-* for the prototype, the attribute list only have one attribute "content" which is the whole texts.
-$ Problem to solve: How to parse the text? What about picture
-
-CERMINE: this paper reader used the CERMINE module, and it will label the usage of each section of the paper.
-plain_reader: this module simply opens the pdf and read it into text
-
-
---------------------------------------------------embedding methods-----------------------------------------------------
-This module is a tool, that will take an attribute list, and embed the text into some high-dimensional space.
-
-$ Problem to solve: embed long text? Sliding window? Pooling technique?
-
-openAI: use openAI's embedding

@@ -1,0 +1,20 @@
+Use open source program Grobid to parse a research paper into metadata
+We are using a web service mode. (We can also use batch mode)
+Usage:
+Step 1: Installation:
+https://grobid.readthedocs.io/en/latest/Install-Grobid/
+
+Step 2: Setup webserver
+https://grobid.readthedocs.io/en/latest/Grobid-service/
+Failed: 2023.May.06: problem of server
+
+Step 2: Use batch mode (Not using such option)
+https://grobid.readthedocs.io/en/latest/Grobid-batch/
+
+Step 3: setup python client
+https://github.com/kermitt2/grobid_client_python
+
+
+
+
+

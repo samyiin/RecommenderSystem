@@ -16,7 +16,7 @@ Solution3: embed metadata?
 Most convincing solution: embed each section, and weighted sum up based on their importance
 my solution today: cut into segments of equal length, and embed it and take average
 
-=======2023.May.7=======
+=======2023.May.9=======
 http://arxiv.org/abs/2303.13340
 This paper gives me an insight: We can use a sliding window plus unweighted average sum pooling technique to see if it
 is good.
@@ -38,3 +38,18 @@ So without too much trouble, just need to add the payment methods, and generate 
 website, this whole thing already works.
 Each paper takes about 30 seconds to get the embedding, and about 0.02 dollar. Seems like there is a 18 dollar free
 trial everyday?
+
+=======2023.May.10=======
+*********************************************
+*******                              ********
+*******  First edition summarize     ********
+*******                              ********
+*********************************************
+In the first edition, I only set up the openAI embedding method. This embedding method will use a paper reader to get an
+attribute dictionary for the paper, and since so far there is only "content" in the dict, we will only operate on the
+content attribute.
+Because the openAI embedding can only take 8000 tokens at a time for embedding, my solution sofar is using a sliding
+window that have half overlap, and take the unweighted average of each embedded vectors. This can be modified later too.
+
+Sadly, seems like semetic scholar have already parsed data with embeddings, so I will first try to use it's embeddings,
+this project will be frozen too.
