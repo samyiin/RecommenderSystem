@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f93bed97-8204-4357-bab5-f740e0f61da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MANAGERS/manager_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommender_system/content_based/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/recommender_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/recommender_system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOG_ABSTRACT" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_ABSTRACT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MANAGERS/manager1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/semantic_scholar_test/README" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_attr_dict/test2.json" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_attr_dict/test2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_attr_dict/test_paper.json" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_attr_dict/test_paper.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_pdf/test2.cermzones" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test2.cermzones" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_pdf/test2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_pdf/test_paper.cermzones" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test_paper.cermzones" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database(test)/simulation_papers/papers_pdf/test_paper.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test_paper.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeding_methods/abstract_segment_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/embeding_methods/abstract_segment_embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeding_methods/openAI/openAI_embedder.py" beforeDir="false" afterPath="$PROJECT_DIR$/embeding_methods/openAI/openAI_embedder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper_parser/CERMINE/cermine_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/paper_parser/CERMINE/cermine_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANAGERS/manager_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/MANAGERS/manager_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_pandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/database_pandas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +33,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/paper_parser" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="manager_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="recommender_system" />
@@ -91,7 +83,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684184261411</updated>
-      <workItem from="1684184271400" duration="11571000" />
+      <workItem from="1684184271400" duration="12970000" />
+      <workItem from="1684242427288" duration="93000" />
+      <workItem from="1684242522657" duration="2930000" />
     </task>
     <servers />
   </component>
