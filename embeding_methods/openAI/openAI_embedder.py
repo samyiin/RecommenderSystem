@@ -21,9 +21,14 @@ class OpenAIEmbedder(AbstractSegmentEmbedder):
         return embedding
 
     def embed_paper(self, paper_attribute_dic):
-        # todo first edition, assume attribute dict only have "content"
-        content = paper_attribute_dic['content']
-        return self._embed_long_text(content)
+        """
+        the paper will be represented in an attribute dictionary of semantic scholar's format
+        By attribute dict, it could mean anything that can be access by __getitem__, such as a pandas row with correct
+        column name, or an actual dictionary. Must include columns:
+        Title, Author, content, citations
+        """
+        content = paper_attribute_dic['content']    # should just concatnate
+        return self.embed_long_text(content)
 
 
 # text_len_limit = 5600  # 100 tokens ~= 75 words, max = 8191

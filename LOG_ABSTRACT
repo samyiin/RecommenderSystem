@@ -63,15 +63,35 @@ content based (and a lot more, basically the same idea, embed and similarity)
 https://github.com/EnergizeStatistics/research-paper-recommender/blob/master/main.ipynb
 A seemingly intergrated one
 https://github.com/Muelli21/RecommendingPapers
-
 Interesting thoughts: search engine or recommender system?
-
 Today, reformat the pipeline. Use a "interact with database" approach. Also reformat the paper reader.
-
 Change of plans, today we first try to read aviv's data.
 
 =======2023.May.15=======
+*******************
+*****new start*****
+*******************
 Thanks to Shlomo, solved the download data problem. So I will start to use Aviv's data for now.
+So basically the problem now is that aviv's data have all the metadata for a paper, but no content of the paper. And if
+we download a pdf of a research paper, then the paperParser can parse it into labeled content, and the embedding method
+will embed the paper into high dimension vectors.
+So the decision is: we will translate every pdf into attribute dictionary in the format of semantic scholar's data.
+And add two attributes to semantic scholar's data: "content" and "embedding"
+And regarding the embedding, we will use an output dimension of 1536, as format of "text-embedding-ada-002" of openAI
+So far for aviv's data, we will leave the content empty, until we found a way to get the pdf of the paper. (So we will
+embed the metadata?)
+And the format for author and citation will be as semantic scholar: we will give auther id, and set up a separate author
+ database and citation database for look up.
+
+And then we will do the third phase, which is recommending using the embeddings of a paper.
+
+The recommender system depends on how the database is setup, for now we used a pandas dataframe, so the RS will use
+pandas way to get recommendations. If we use a more efficient database in the future, then the way we query database
+will be different. For the toy example, we will use pandas.
+
+Also the embedder depends on what the database looks like, including what are the columns. As to how to query database,
+embedder can remain it's API: attribute dict.
+I should setup a database API to get the dependencies right.
 
 
 

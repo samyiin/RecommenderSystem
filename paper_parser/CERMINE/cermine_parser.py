@@ -51,7 +51,7 @@ class CERMINEParser(PaperReader):
 
 # how to use
 reader = CERMINEParser()
-raw_paper_dir = '/database(test)/papers_pdf/'
-zone_file_path = '/database(test)/papers_pdf/test2.cermzones'
-output_dict_dir = "/database(test)/papers_attr_dict"
+raw_paper_dir = '/database/papers_pdf/'
+zone_file_path = '/database/papers_pdf/test2.cermzones'
+output_dict_dir = "/database/papers_attr_dict"
 reader.parse_dir(raw_paper_dir, output_dict_dir)

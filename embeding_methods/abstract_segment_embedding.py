@@ -16,7 +16,7 @@ class AbstractSegmentEmbedder(ABC):
         """all subclass must implement this method"""
         pass
 
-    def _embed_long_text(self, long_text_string) -> np.ndarray:
+    def embed_long_text(self, long_text_string) -> np.ndarray:
         text_segments = self._sliding_window_segmentation(long_text_string)
         embedding_vectors = []
         for text in text_segments:
