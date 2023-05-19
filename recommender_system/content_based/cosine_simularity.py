@@ -2,7 +2,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import heapq
 from database.database_pandas import *
-
+import embeding_methods
+# todo this way of import is bad, import package not script
 
 class RSCosSimilarity:
     def __init__(self):
@@ -21,6 +22,7 @@ class RSCosSimilarity:
         return to_recommend[:self.RECOMMENDING_PAPER_NUMBER]
 
     def convert_preference_to_embeddings(self, preference_list):
+        embedder = embeding_methods.OpenAIEmbedder()
         return np.random.rand(1, 1536)  # use fake embedding for now, later change to openAI embedding
 
 

@@ -1,0 +1,59 @@
+The content based recommender system have the following architecture:
+CONTENT ANALYZER
+    This module will convert the information source into represented items
+
+PROFILE LEARNER
+    This module have two phase:
+    (1) The learning phase: For an user u, it will learn the user's rating for each represented items, and create a user
+    profile.
+    (2) The online phase: For every new item that feeds to the user, it will record the user's feedback/rating to the
+    item, and update the user's profile.
+
+FILTER COMPONENT
+    This module will receive a set of represented items, and the user profile of user u, and recommend to u a list of
+    recommendations.
+========================================================================================================================
+FIRST EDITION:
+A refined version of TF-IDF: different representation of information source and user profile.
+
+CONTENT ANALYZER
+In our first edition, we will use Aviv's semantic scholar data as information source, and embed it into 1536 dimension-
+vector using openAI's 'text-embedding-ada-002' embedding method. And we will not use a database, we will use pandas df
+as our database.
+
+PROFILE LEARNER
+In the first edition, we will represent user profile also as 1536 dimension-vector, so it will be easier for FILTER
+COMPONENT, We will take every paper the user ever liked in the training phase, and average their embeddings. So for a
+user .
+And for simplicity, we will not implement the feedback part, so the user's profile will not change after the
+learning phase.
+
+FILTER COMPONENT
+In the first edition, the priority of a recommending a paper to a user will be determined by the cosine similarity of
+a user profile and the represented item, both 1536-dimension-vectors.
+
+========================================================================================================================
+SECOND EDITION
+
+For CONTENT ANALYZER, there are other ways to represent a paper:
+Keyword-based systems
+Semantic Analysis by ontologies (openAI should be this kind)
+Semantic Analysis by encyclopedic knowledge source
+
+For PROFILE LEARNER (first of all, we can try to complete the feedback functionality)
+Probabilistic methods, like Naive Bayes
+Relevance Feedback method: the Rocchio's algorithm
+machine learning techniques to learn the classifier of user profile.
+
+Then once the user profile is some sort of a classifier, we can just feed the user the most relevant content in the
+FILTER COMPONENT phase. (According to how the classifier is defined.
+
+========================================================================================================================
+Problems:
+1. I need a database: I need to input all the papers into a database, so that given an author, I can find all his works
+and all the papers he cited.
+    1.1. Once I have a database, the interface remains unchanged, but the "_save_file_to_database" and "get_xx_by_id"
+     will change in both databases. (maybe even the whole init?)
+2. Still haven't decided how to embed a paper, now we have the metadata, but not always have the paper pdf/txt. Are we
+going to embed the metadata?
+

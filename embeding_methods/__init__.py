@@ -1,3 +1,3 @@
-# from .base_embed import
-#
-# __all__ = ['GPT2']
+from .openAI import *
+
+__all__ = ['OpenAIEmbedder']
