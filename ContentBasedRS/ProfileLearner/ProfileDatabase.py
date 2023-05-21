@@ -6,9 +6,6 @@ import json
 from ContentBasedRS.ContentAnalyzer import ItemDatabase
 
 
-EMBEDDING_COL = 'embedding'
-LIKED_PAPER_IDS_COL = 'liked paper ids'
-USER_ID_COL = 'authorid'
 
 
 class ProfileDatabase:
@@ -20,19 +17,22 @@ class ProfileDatabase:
     for query data from database
     This class only works on Aviv's semantic scholar data, or anything that's similar in format.
     """
-    has_initialized = False  # in case there is two database objects
+    EMBEDDING_COL = 'embedding'
+    LIKED_PAPER_IDS_COL = 'liked paper ids'
+    USER_ID_COL = 'authorid'
 
-    def __init__(self, info_source_dir, user_profiles_dir, item_db, embedding_method):
+    def __init__(self, item_db, embedding_method):
         """
         This function will read all the papers form the information source, and convert them into some kinds of
         representation. In the first edition, it will be an openAI 1536-dimension-vector.
         """
         self.embedding_method = embedding_method
         self.item_db = item_db
-        self.user_profiles_fps = []
-        if self.has_initialized:
-            return
-        file_count = 0
+        self.data_fps = []
+        self.file_count = 0
+
+    def add_to_database(self, info_source_dir, store_data_dir):
+        """add entities to database given directory of raw source files"""
         for filename in os.listdir(info_source_dir):
             if filename != '20230127_081509_00053_ss3hj_1c1985a6-6832-4f1f-974e-fdc608212843':
                 # todo for testing, because this computer can't run bigger files.... scalability problem
@@ -41,14 +41,12 @@ class ProfileDatabase:
             if not os.path.isfile(papers_info_fp):
                 raise Exception('this should not happen')
             # this part will change once I have a database
-            output_fp = user_profiles_dir + str(file_count)
-            self._save_file_to_database(papers_info_fp, output_fp)
-            file_count += 1
-            self.user_profiles_fps.append(output_fp)
-        self.has_initialized = True
+            output_fp = store_data_dir + str(self.file_count)
+            self._process_and_save_file_to_database(papers_info_fp, output_fp)
+            self.file_count += 1
+            self.data_fps.append(output_fp)
 
-
-    def _save_file_to_database(self, author_info_fp, output_fp):
+    def _process_and_save_file_to_database(self, author_info_fp, output_fp):
         """
         take a paper file from the semantic scholar papers,
         convert to pickle file
@@ -65,24 +63,24 @@ class ProfileDatabase:
                 temp_counter += 1
         users_db = pd.DataFrame(users)
         # todo when user gets bigger, user id might overflow
-        users_db[USER_ID_COL] = users_db[USER_ID_COL].astype('int64')
-        users_db[LIKED_PAPER_IDS_COL] = users_db.apply(self._get_liked_papers, axis=1)
-        users_db[EMBEDDING_COL] = users_db.apply(self._embed_user, axis=1)
+        users_db[self.USER_ID_COL] = users_db[self.USER_ID_COL].astype('int64')
+        users_db[self.LIKED_PAPER_IDS_COL] = users_db.apply(self._get_liked_papers, axis=1)
+        users_db[self.EMBEDDING_COL] = users_db.apply(self.embed_user, axis=1)
         # this part will change once I have a database
         users_db.to_pickle(output_fp)
 
-    def _embed_user(self, row):
+    def embed_user(self, row):
         """
         In the first edition, I will find all the papers this user cited or wrote, and find these papers' embeddings,
         and take unweighted average of these embeddings
         :param row:
         :return:
         """
-        liked_paper_ids = row[LIKED_PAPER_IDS_COL]
+        liked_paper_ids = row[self.LIKED_PAPER_IDS_COL]
         liked_paper_embeddings = []
         for paper_id in liked_paper_ids:
             paper = self.item_db.get_item_by_id(paper_id)
-            paper_embedding = paper.iloc[0][EMBEDDING_COL]
+            paper_embedding = paper.iloc[0][self.EMBEDDING_COL]
             liked_paper_embeddings.append(paper_embedding)
         user_embedding = np.average(np.array(liked_paper_embeddings), axis=0)
         # embed this content
@@ -96,25 +94,39 @@ class ProfileDatabase:
         # from paper to all other papers this paper cited -> citation file
         # maybe we can start from someone who's work in in paper db, who's name is in author db, and we can find
         # citation file for that paper...
-        user_id = row[USER_ID_COL]
+        user_id = row[self.USER_ID_COL]
         sample_liked_papers = [58033818, 57183173, 147654154, 147887750]
         return np.array(sample_liked_papers)
-
 
     def get_profile_by_id(self, user_id):
         """
         Once I have a database, id should have a index for fast rerieval
         """
         # todo this will be optimize once we have a database
-        for user_profiles_fp in self.user_profiles_fps:
+        for user_profiles_fp in self.data_fps:
             user_profile_df = pd.read_pickle(user_profiles_fp)
             # find the rows of this user id (supposed to be 1 or 0 row)
-            rows = user_profile_df.loc[user_profile_df[USER_ID_COL] == user_id]
+            rows = user_profile_df.loc[user_profile_df[self.USER_ID_COL] == user_id]
             if len(rows) > 1:
                 raise Exception('this should not happen')
             if len(rows) == 1:
                 return rows
         raise Exception('this user id does not exit!')
+
+    def update_user(self, row):
+        """get the user feed back, and we will update the user"""
+        # todo input check
+        for user_profiles_fp in self.data_fps:
+            user_profile_df = pd.read_pickle(user_profiles_fp)
+            # find the rows of this user id (supposed to be 1 or 0 row)
+            user_index = user_profile_df.loc[user_profile_df[self.USER_ID_COL] == row.iloc[0][self.USER_ID_COL]].index
+            # todo what if it doesn't exist?
+            user_profile_df.loc[user_index] = row
+            user_profile_df.to_pickle(user_profiles_fp)
+            return
+        raise Exception('this user id does not exit!')
+
+
 
 
 

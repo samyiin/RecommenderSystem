@@ -19,14 +19,14 @@ A refined version of TF-IDF: different representation of information source and 
 CONTENT ANALYZER
 In our first edition, we will use Aviv's semantic scholar data as information source, and embed it into 1536 dimension-
 vector using openAI's 'text-embedding-ada-002' embedding method. And we will not use a database, we will use pandas df
-as our database.
+as our database for now.
 
 PROFILE LEARNER
 In the first edition, we will represent user profile also as 1536 dimension-vector, so it will be easier for FILTER
 COMPONENT, We will take every paper the user ever liked in the training phase, and average their embeddings. So for a
-user .
-And for simplicity, we will not implement the feedback part, so the user's profile will not change after the
-learning phase.
+user.
+For the user feedback, we simplified as if a user read a paper and like it, he will add it to his read papers, and
+consequently his profile embedding will change, and we will update this in the profile database.
 
 FILTER COMPONENT
 In the first edition, the priority of a recommending a paper to a user will be determined by the cosine similarity of
@@ -53,7 +53,8 @@ Problems:
 1. I need a database: I need to input all the papers into a database, so that given an author, I can find all his works
 and all the papers he cited.
     1.1. Once I have a database, the interface remains unchanged, but the "_save_file_to_database" and "get_xx_by_id"
-     will change in both databases. (maybe even the whole init?)
+         will change in both databases. (maybe even the whole init?)
+    1.2. the query database will change too.
 2. Still haven't decided how to embed a paper, now we have the metadata, but not always have the paper pdf/txt. Are we
 going to embed the metadata?
 

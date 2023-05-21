@@ -10,8 +10,8 @@ class OpenAIEmbedding:
 
     def __init__(self):
         self.segment_length = text_len_limit
-        # my_openai_private_key = input("input your openAI privateKey")
-        # openai.api_key = my_openai_private_key
+        my_openai_private_key = input("input your openAI privateKey")
+        openai.api_key = my_openai_private_key
 
     def embed_short_text(self, text_string) -> np.ndarray:
         """embed text that's under legal length, """

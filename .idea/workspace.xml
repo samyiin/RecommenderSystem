@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f93bed97-8204-4357-bab5-f740e0f61da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/ItemDatabase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/ProfileDatabase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/tools/OpenAIEmbedding.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/tools/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeding_methods/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/embeding_methods/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embeding_methods/openAI/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/embeding_methods/openAI/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/ItemDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/ItemDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/ProfileDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/ProfileDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/README" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/README" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/RepresentedItems/0" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/RepresentedItems/0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/UserProfiles/0" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/UserProfiles/0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/tools/OpenAIEmbedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/tools/OpenAIEmbedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANAGERS/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANAGERS/manager_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database_pandas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeding_methods/MY_LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeding_methods/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeding_methods/abstract_segment_embedding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeding_methods/openAI/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeding_methods/openAI/openAI_embedder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/GPT (abort)/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/GPT (abort)/extract_text_tool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/GPT (abort)/gpt2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/Grobid (abort)/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/Grobid (abort)/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/PLAIN_TEXT(abort)/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/PLAIN_TEXT(abort)/plain_text.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommender_system/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommender_system/content_based/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommender_system/content_based/cosine_simularity.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +64,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/paper_parser" />
       <recent name="$PROJECT_DIR$/ContentBasedRS/utils" />
       <recent name="$PROJECT_DIR$/database" />
-      <recent name="$PROJECT_DIR$/paper_parser" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.read_citations">
+  <component name="RunManager" selected="Python.cosine_similarity">
     <configuration name="ItemDatabase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="recommender_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,8 +182,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.read_citations" />
         <item itemvalue="Python.cosine_similarity" />
+        <item itemvalue="Python.read_citations" />
         <item itemvalue="Python.ProfileDatabase" />
         <item itemvalue="Python.ItemDatabase" />
         <item itemvalue="Python.manager_1" />
@@ -189,7 +203,8 @@
       <workItem from="1684242522657" duration="2930000" />
       <workItem from="1684307063450" duration="8164000" />
       <workItem from="1684363630221" duration="2023000" />
-      <workItem from="1684435109994" duration="25418000" />
+      <workItem from="1684435109994" duration="26229000" />
+      <workItem from="1684667324798" duration="10874000" />
     </task>
     <servers />
   </component>
@@ -201,29 +216,35 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py</url>
-          <line>19</line>
+          <line>38</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/ProfileLearner/ProfileDatabase.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/ItemDatabase.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ContentBasedRS/ProfileLearner/read_citations.py</url>
           <line>18</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="user.index" language="Python" />
+        <watch expression="user.iloc[0]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/recommender_system$cosine_similarity.coverage" NAME="cosine_similarity Coverage Results" MODIFIED="1684534920322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/FilteringComponent" />
+    <SUITE FILE_PATH="coverage/recommender_system$cosine_similarity.coverage" NAME="cosine_similarity Coverage Results" MODIFIED="1684681769408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/FilteringComponent" />
     <SUITE FILE_PATH="coverage/recommender_system$ItemDataBase.coverage" NAME="ItemDatabase Coverage Results" MODIFIED="1684527902711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
     <SUITE FILE_PATH="coverage/recommender_system$read_citations.coverage" NAME="read_citations Coverage Results" MODIFIED="1684535290175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
     <SUITE FILE_PATH="coverage/recommender_system$ProfileDatabase.coverage" NAME="ProfileDatabase Coverage Results" MODIFIED="1684533005469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
