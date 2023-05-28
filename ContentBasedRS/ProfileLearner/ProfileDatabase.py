@@ -5,7 +5,19 @@ import numpy as np
 import json
 from ContentBasedRS.ContentAnalyzer import ItemDatabase
 
-
+"""
+User must have the following attributes
+user = {'authorid': None,
+        'externalids': None,
+        'url': None,
+        'name': None,
+        'aliases':None,
+        'affiliations':None,
+        'homepage': None, 'papercount': None, 'citationcount': None, 'hindex': None, 'updated': None,
+        'liked paper ids':None,
+        'embedding': None
+            }
+"""
 
 
 class ProfileDatabase:
@@ -21,27 +33,36 @@ class ProfileDatabase:
     LIKED_PAPER_IDS_COL = 'liked paper ids'
     USER_ID_COL = 'authorid'
 
-    def __init__(self, item_db, embedding_method):
+    # database query
+    GET_BY_ID = "get row by id"
+    def __init__(self, embedding_method, item_db, store_data_dir):
         """
         This function will read all the papers form the information source, and convert them into some kinds of
         representation. In the first edition, it will be an openAI 1536-dimension-vector.
         """
         self.embedding_method = embedding_method
+        self.store_data_dir = store_data_dir
         self.item_db = item_db
-        self.data_fps = []
         self.file_count = 0
+        self.item_db.query_database([item_db.GENERATE_DEFAULT_USERS, self.store_data_dir + "default users"])
+        self.data_fps = [self.store_data_dir + "default users"]  # todo this is a temporary way of iterating all the database
 
-    def add_to_database(self, info_source_dir, store_data_dir):
+
+########################################################################################################################
+########################################################################################################################
+######################                                                                 #################################
+######################                      Modify Database                            #################################
+######################                                                                 #################################
+########################################################################################################################
+########################################################################################################################
+    def add_by_raw_info(self, info_source_dir):
         """add entities to database given directory of raw source files"""
         for filename in os.listdir(info_source_dir):
-            if filename != '20230127_081509_00053_ss3hj_1c1985a6-6832-4f1f-974e-fdc608212843':
-                # todo for testing, because this computer can't run bigger files.... scalability problem
-                continue
             papers_info_fp = os.path.join(info_source_dir, filename)
             if not os.path.isfile(papers_info_fp):
                 raise Exception('this should not happen')
             # this part will change once I have a database
-            output_fp = store_data_dir + str(self.file_count)
+            output_fp = os.path.join(self.store_data_dir, str(self.file_count))
             self._process_and_save_file_to_database(papers_info_fp, output_fp)
             self.file_count += 1
             self.data_fps.append(output_fp)
@@ -62,8 +83,8 @@ class ProfileDatabase:
                     break
                 temp_counter += 1
         users_db = pd.DataFrame(users)
-        # todo when user gets bigger, user id might overflow
-        users_db[self.USER_ID_COL] = users_db[self.USER_ID_COL].astype('int64')
+        # author id is string, because int might overflow
+        users_db[self.USER_ID_COL] = users_db[self.USER_ID_COL].astype(str)
         users_db[self.LIKED_PAPER_IDS_COL] = users_db.apply(self._get_liked_papers, axis=1)
         users_db[self.EMBEDDING_COL] = users_db.apply(self.embed_user, axis=1)
         # this part will change once I have a database
@@ -79,7 +100,7 @@ class ProfileDatabase:
         liked_paper_ids = row[self.LIKED_PAPER_IDS_COL]
         liked_paper_embeddings = []
         for paper_id in liked_paper_ids:
-            paper = self.item_db.get_item_by_id(paper_id)
+            paper = self.item_db.query_database([self.item_db.GET_BY_ID, paper_id])
             paper_embedding = paper.iloc[0][self.EMBEDDING_COL]
             liked_paper_embeddings.append(paper_embedding)
         user_embedding = np.average(np.array(liked_paper_embeddings), axis=0)
@@ -89,20 +110,28 @@ class ProfileDatabase:
     def _get_liked_papers(self, row):
         """return list of paper "corpus id": all the papers this author wrote, plus all the papers this author cited"""
         # todo find all the papers this author wrote and cited
-        # this might not be solved if we don't have all the database....
         # from author -> all things author wrote -> paper file
         # from paper to all other papers this paper cited -> citation file
         # maybe we can start from someone who's work in in paper db, who's name is in author db, and we can find
         # citation file for that paper...
         user_id = row[self.USER_ID_COL]
-        sample_liked_papers = [58033818, 57183173, 147654154, 147887750]
+        sample_liked_papers = ['58033818']
+        cited_papers = self.item_db.query_database([self.item_db.GET_CITED_PAPERS,'58033818' ])
+        sample_liked_papers += cited_papers
         return np.array(sample_liked_papers)
 
-    def get_profile_by_id(self, user_id):
+    def query_database(self, args):
+        """args is list of arguments, the first argument is query, the rest is possibly parameters for the query"""
+        if args[0] == self.GET_BY_ID:
+            citing_paper_id = args[1]
+            return self._get_row_by_id(citing_paper_id)
+
+    def _get_row_by_id(self, user_id):
         """
         Once I have a database, id should have a index for fast rerieval
         """
         # todo this will be optimize once we have a database
+        # todo this will be a query
         for user_profiles_fp in self.data_fps:
             user_profile_df = pd.read_pickle(user_profiles_fp)
             # find the rows of this user id (supposed to be 1 or 0 row)
@@ -125,11 +154,3 @@ class ProfileDatabase:
             user_profile_df.to_pickle(user_profiles_fp)
             return
         raise Exception('this user id does not exit!')
-
-
-
-
-
-
-
-

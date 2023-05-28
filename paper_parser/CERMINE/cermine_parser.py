@@ -3,7 +3,7 @@ import os
 
 
 class CERMINEParser(PaperReader):
-    def __init__(self):
+    def __init__(self, cermine_path, ):
         # find the directory for java executable
         project_root_directory = "recommender_system"
         relative_path = 'paper_parser/CERMINE'
@@ -51,7 +51,7 @@ class CERMINEParser(PaperReader):
 
 # how to use
 reader = CERMINEParser()
-raw_paper_dir = '/database/papers_pdf/'
+raw_paper_dir = 'paper_parser/simulation_papers/papers_pdf'
 zone_file_path = '/database/papers_pdf/test2.cermzones'
 output_dict_dir = "/database/papers_attr_dict"
 reader.parse_dir(raw_paper_dir, output_dict_dir)

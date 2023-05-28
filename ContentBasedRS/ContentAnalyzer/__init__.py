@@ -1,3 +1,3 @@
 from .ItemDatabase import *
-
-__all__ = ['ItemDatabase']
+from .CitationDatabase import *
+__all__ = ['ItemDatabase', 'CitationDatabase']
