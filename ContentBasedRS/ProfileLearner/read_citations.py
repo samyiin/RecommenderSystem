@@ -16,6 +16,7 @@ def read_info(papers_info_fp):
                 break
             temp_counter += 1
     papers_db = pd.DataFrame(papers)
+    papers_db.to_pickle()
     print(1)
 
 papers_info_fp = '/cs/labs/avivz/avivz/semantic_scholar_data/citations/20230127_081540_00122_jcyz3_1d7c3ad8-0f23-40d8-b5a1-e85775a69c86'
