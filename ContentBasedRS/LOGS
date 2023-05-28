@@ -33,8 +33,17 @@ In the first edition, the priority of a recommending a paper to a user will be d
 a user profile and the represented item, both 1536-dimension-vectors.
 
 ========================================================================================================================
-SECOND EDITION
+Problems:
+1. I need a database: I need to input all the papers into a database, so that given an author, I can find all his works
+and all the papers he cited.
+    1.1. Once I have a database, the interface remains unchanged, but the "_save_file_to_database" and "get_xx_by_id"
+         will change in both databases. (maybe even the whole init?)
+    1.2. the query database will change too.
+2. Still haven't decided how to embed a paper, now we have the metadata, but not always have the paper pdf/txt. Are we
+going to embed the metadata?
 
+========================================================================================================================
+OTHER POSSIBILITIES
 For CONTENT ANALYZER, there are other ways to represent a paper:
 Keyword-based systems
 Semantic Analysis by ontologies (openAI should be this kind)
@@ -49,12 +58,5 @@ Then once the user profile is some sort of a classifier, we can just feed the us
 FILTER COMPONENT phase. (According to how the classifier is defined.
 
 ========================================================================================================================
-Problems:
-1. I need a database: I need to input all the papers into a database, so that given an author, I can find all his works
-and all the papers he cited.
-    1.1. Once I have a database, the interface remains unchanged, but the "_save_file_to_database" and "get_xx_by_id"
-         will change in both databases. (maybe even the whole init?)
-    1.2. the query database will change too.
-2. Still haven't decided how to embed a paper, now we have the metadata, but not always have the paper pdf/txt. Are we
-going to embed the metadata?
+SECOND_EDITION
 
