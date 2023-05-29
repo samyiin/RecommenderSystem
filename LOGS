@@ -59,4 +59,9 @@ FILTER COMPONENT phase. (According to how the classifier is defined.
 
 ========================================================================================================================
 SECOND_EDITION
+There are three changes:
+1. The paper will be represented by a new way, with abstract and summary so that we can embed the papers.
+    1.1 The paper topics will be confined to a certain topic, say machine learning
+2. We will use a database to process instead of taking sample files to process.
+3. We will add more ways of recommending beside from cosine similarity, such as order by citation.
 

@@ -94,12 +94,5 @@ file into "zones", aka things such as "title", "author", "reference" etc. And I 
 But I feel like I need to at least extract the title of the paper from it for the database in first edition.
 And later Title + author for used based filtering, title + author + citation for item based filtering...
 
-Today another change: so paper_reader in th future will have a different interface.
-It will take a directory of papers, and output to a given directory saved file of attribute dictionary, using pickles?
-Or use json?
-
-Sadly, seems like semantic scholar has already done a good job parsing the papers into meta data, we will just pend this
- part. Maybe later I can use it to parse the paper's downloaded pdf, because I don't think semantic scholar have done
- that. just have to figure out how to read the semantic scholar's parsed papers.
 
 

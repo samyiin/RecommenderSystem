@@ -1,9 +1,9 @@
 import os
-from ContentBasedRS.tools import OpenAIEmbedding
+from ContentBasedRS_toy.tools import OpenAIEmbedding
 import pandas as pd
 import numpy as np
 import json
-from ContentBasedRS.ContentAnalyzer import ItemDatabase
+from ContentBasedRS_toy.ContentAnalyzer import ItemDatabase
 
 """
 User must have the following attributes

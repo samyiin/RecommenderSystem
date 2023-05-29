@@ -1,8 +1,8 @@
 import os.path
 
-from ContentBasedRS.ContentAnalyzer import *
-from ContentBasedRS.ProfileLearner import *
-from ContentBasedRS.tools import *
+from ContentBasedRS_firstAttempt.ContentAnalyzer import *
+from ContentBasedRS_firstAttempt.ProfileLearner import *
+from ContentBasedRS_firstAttempt.tools import *
 import numpy as np
 import sys
 project_root_dir = '/'.join(os.getcwd().split('/')[:-2])
@@ -16,12 +16,12 @@ embedding_method = OpenAIEmbedding()
 # embedding = embedding_method.embed_long_text('this is the text to embed')
 
 # actual recommender system
-paper_source_dir = os.path.join(project_root_dir, 'ContentBasedRS/TestInfoSource/papaers')
-represented_paper_dir = os.path.join(project_root_dir, 'ContentBasedRS/RepresentedItems/')
-citation_source_dir = os.path.join(project_root_dir, 'ContentBasedRS/TestInfoSource/citations')
-structured_citation_dir = os.path.join(project_root_dir, 'ContentBasedRS/Citations')
-user_source_dir = os.path.join(project_root_dir, 'ContentBasedRS/TestInfoSource/authors/')
-user_profiles_dir = os.path.join(project_root_dir,  'ContentBasedRS/UserProfiles/')
+paper_source_dir = os.path.join(project_root_dir, 'ContentBasedRS-firstAttempt/TestInfoSource/papers')
+represented_paper_dir = os.path.join(project_root_dir, 'ContentBasedRS-firstAttempt/StructuredData/RepresentedItems/')
+citation_source_dir = os.path.join(project_root_dir, 'ContentBasedRS-firstAttempt/TestInfoSource/citations')
+structured_citation_dir = os.path.join(project_root_dir, 'ContentBasedRS-firstAttempt/StructuredData/Citations')
+user_source_dir = os.path.join(project_root_dir, 'ContentBasedRS-firstAttempt/TestInfoSource/authors/')
+user_profiles_dir = os.path.join(project_root_dir,  'ContentBasedRS-firstAttempt/StructuredData/UserProfiles/')
 
 # set up database for citations
 citation_db = CitationDatabase()

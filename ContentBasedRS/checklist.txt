@@ -1,0 +1,10 @@
+download all papers in field "machine learning"
+
+set up paper database
+set up a user database using the papers
+set up citation database
+recommend by different attributes
+recommend by multiple attributes
+
+seems like there is a new way of embedding, called specture embedding, and semantic scholar is using it
+Seems like semantic scholar also have a recommender system, and can also be user based + user can claim an author...
