@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f93bed97-8204-4357-bab5-f740e0f61da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/ProfileLearner/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/queryDatabase.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/WriteToDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/writeToDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ContentBasedRS/RawSource/DownloadRawSource.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/RawSource/DownloadRawSource.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/checklist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/checklist.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +183,7 @@
       <workItem from="1685225973647" duration="30000" />
       <workItem from="1685304775056" duration="103000" />
       <workItem from="1685305983574" duration="5008000" />
-      <workItem from="1685357070239" duration="13062000" />
+      <workItem from="1685357070239" duration="13950000" />
     </task>
     <servers />
   </component>
@@ -217,9 +209,14 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/writeToDatabase.py</url>
+          <url>file://$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/writeToContentDatabase.py</url>
           <line>49</line>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/RawSource/DownloadRawSource.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -234,7 +231,7 @@
     <SUITE FILE_PATH="coverage/recommender_system$WriteToDatabase.coverage" NAME="WriteToDatabase Coverage Results" MODIFIED="1685361675708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
     <SUITE FILE_PATH="coverage/recommender_system$cosine_similarity.coverage" NAME="cosine_similarity Coverage Results" MODIFIED="1684681769408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/FilteringComponent" />
     <SUITE FILE_PATH="coverage/recommender_system$ItemDataBase.coverage" NAME="ItemDatabase Coverage Results" MODIFIED="1684527902711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
-    <SUITE FILE_PATH="coverage/recommender_system$DownloadRawSource.coverage" NAME="DownloadRawSource Coverage Results" MODIFIED="1685479662961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/RawSource" />
+    <SUITE FILE_PATH="coverage/recommender_system$DownloadRawSource.coverage" NAME="DownloadRawSource Coverage Results" MODIFIED="1685480529915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/RawSource" />
     <SUITE FILE_PATH="coverage/recommender_system$read_citations.coverage" NAME="read_citations Coverage Results" MODIFIED="1684773041328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
     <SUITE FILE_PATH="coverage/recommender_system$ProfileDatabase.coverage" NAME="ProfileDatabase Coverage Results" MODIFIED="1684533005469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
     <SUITE FILE_PATH="coverage/recommender_system$manager1.coverage" NAME="manager_1 Coverage Results" MODIFIED="1684194829795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MANAGERS" />

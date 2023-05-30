@@ -2,7 +2,7 @@ import json
 
 import requests
 
-features = 'paperId,corpusId,title,authors,embedding,publicationDate,referenceCount,citationCount,influentialCitationCount,tldr,abstract,'
+features = 'paperId,corpusId,title,authors,embedding,publicationDate,referenceCount,citationCount,influentialCitationCount,tldr,abstract'
 # download sample paper
 r1 = requests.get(f'https://api.semanticscholar.org/graph/v1/paper/search?query=machine+learning&offset=0&limit=100&fields={features}').json()
 
