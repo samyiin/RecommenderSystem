@@ -4,8 +4,9 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv/venv_py3.7" />
       <excludeFolder url="file://$MODULE_DIR$/venv/venv_py3.9" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (recommender_system)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

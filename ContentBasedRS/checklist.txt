@@ -18,8 +18,8 @@ How about add fieldsOfStudy, and filter by computer science
 I. Redo what I did in first edition, but this time with database
     1. give each paper embeddings and store to database
     <- which embedding to use? So far just use tldr, and set up possibilities for openAI
-    2. establish a user table based on paper table, user still represented by authorId, and average of embeddings
-    3. Select a user, query database based on embedding cosine similarity, and update user embedding.
+    2. establish a user table based on paper table, user still represented by authorId, and average of embeddings/<
+    3. Select a user, query database based on embedding cosine similarity, and update user embedding./<
 
 
 II. Do aviv's suggestion: query database based on certain feature, here cited number

@@ -116,7 +116,7 @@ class ProfileDatabase:
         # citation file for that paper...
         user_id = row[self.USER_ID_COL]
         sample_liked_papers = ['58033818']
-        cited_papers = self.item_db.query_database([self.item_db.GET_CITED_PAPERS,'58033818' ])
+        cited_papers = self.item_db.query_database([self.item_db.GET_CITED_PAPERS, '58033818'])
         sample_liked_papers += cited_papers
         return np.array(sample_liked_papers)
 

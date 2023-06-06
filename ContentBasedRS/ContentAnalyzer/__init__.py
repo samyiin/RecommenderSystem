@@ -1,1 +1,2 @@
-__all__ = ['queryDatabase', 'writeToContentDatabase.py']
+from .content_db import ContentDB
+__all__ = ['content_db', 'ContentDB']
