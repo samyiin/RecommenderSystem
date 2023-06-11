@@ -2,3 +2,4 @@ Content.db
 Profile.db
 ContentBasedRS/RawSource/*
 ContentBasedRS/cache_function_call/*
+.idea/*
