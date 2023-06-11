@@ -1,2 +1,4 @@
-embeding_methods/openAI/my_openai_api_key
-recommender_system.db
+Content.db
+Profile.db
+ContentBasedRS/RawSource/*
+ContentBasedRS/cache_function_call/*

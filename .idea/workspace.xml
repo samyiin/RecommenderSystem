@@ -2,24 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f93bed97-8204-4357-bab5-f740e0f61da9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/recommender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/Utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContentBasedRS/Utils/encrypt_message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profile.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/recommender_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/recommender_system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ProfileLearner/ProfileDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ProfileLearner/ProfileDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content.db" beforeDir="false" afterPath="$PROJECT_DIR$/Content.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ContentAnalyzer/CitationDatabase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ContentAnalyzer/ItemDatabase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ContentAnalyzer/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/FilteringComponent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/initialize_databases.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/FilteringComponent/cosine_similarity.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ProfileLearner/ProfileDatabase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/ProfileLearner/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/tools/OpenAIEmbedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/Utils/OpenAIEmbedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS-firstAttempt/tools/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/content_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/content_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/cosine_similarity.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/recommender.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/FilteringComponent/recommender.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/profile_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/profile_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/checklist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/checklist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ContentBasedRS/time_line.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/time_line.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/RawSource/DownloadRawSource.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/RawSource/papers/sample_papers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/Utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/Utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/Utils/encrypt_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/ContentBasedRS/Utils/encrypt_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/checklist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ContentBasedRS/time_line.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOGS" beforeDir="false" afterPath="$PROJECT_DIR$/LOGS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profile.db" beforeDir="false" afterPath="$PROJECT_DIR$/Profile.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/CERMINE/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/CERMINE/cermine-impl-1.13-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/CERMINE/cermine_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/MY_LOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/abstract_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_attr_dict/test2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_attr_dict/test_paper.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test2.cermzones" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test_paper.cermzones" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper_parser/simulation_papers/papers_pdf/test_paper.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +68,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PqUm7s1O8btwCasZTLpXhFNJiW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,10 +78,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ContentBasedRS/Utils" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ContentBasedRS/Utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ContentBasedRS" />
       <recent name="$PROJECT_DIR$" />
@@ -68,13 +94,14 @@
       <recent name="$PROJECT_DIR$/database" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.time_line">
-    <configuration name="content_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.initialize_databases">
+    <configuration name="embed_papers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="recommender_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="OPENAI_API_KEY" value="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" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
@@ -82,7 +109,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/content_db.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/embed_papers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +118,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="profile_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="initialize_databases" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="recommender_system" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="OPENAI_API_KEY" value="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" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/initialize_databases.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="recommend_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="recommender_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,12 +149,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/ProfileLearner/profile_db.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,7 +185,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sql" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="search_machine_learning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="recommender_system" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,12 +193,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/venv_py3.7/lib/python3.7/site-packages/pandas/io" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS/RawSource" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/venv_py3.7/lib/python3.7/site-packages/pandas/io/sql.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/RawSource/search_machine_learning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,35 +207,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="time_line" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="recommender_system" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ContentBasedRS" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ContentBasedRS/time_line.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.search_machine_learning" />
+      <item itemvalue="Python.embed_papers" />
+      <item itemvalue="Python.recommender" />
+      <item itemvalue="Python.initialize_databases" />
+      <item itemvalue="Python.recommend_pipeline" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.time_line" />
+        <item itemvalue="Python.initialize_databases" />
+        <item itemvalue="Python.recommend_pipeline" />
         <item itemvalue="Python.recommender" />
-        <item itemvalue="Python.content_db" />
-        <item itemvalue="Python.profile_db" />
-        <item itemvalue="Python.sql" />
+        <item itemvalue="Python.embed_papers" />
+        <item itemvalue="Python.search_machine_learning" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +247,7 @@
       <workItem from="1685357070239" duration="17323000" />
       <workItem from="1685540219652" duration="4193000" />
       <workItem from="1685619362540" duration="7283000" />
-      <workItem from="1685712539942" duration="38336000" />
+      <workItem from="1685712539942" duration="84892000" />
     </task>
     <servers />
   </component>
@@ -238,27 +273,78 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/RawSource/DownloadRawSource.py</url>
-          <line>8</line>
+          <url>file://$PROJECT_DIR$/ContentBasedRS/RawSource/search_machine_learning.py</url>
+          <line>11</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <condition expression="authorId is None" language="Python" />
-          <url>file://$PROJECT_DIR$/ContentBasedRS/ProfileLearner/profile_db.py</url>
-          <line>103</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/ContentBasedRS/RawSource/search_machine_learning.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/time_line.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="74" />
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ContentBasedRS/time_line.py</url>
-          <line>114</line>
-          <option name="timeStamp" value="76" />
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/embed_papers.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer/content_db.py</url>
+          <line>151</line>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="137" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="140" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>87</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ContentBasedRS/recommend_pipeline.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -269,17 +355,21 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/recommender_system$time_line.coverage" NAME="time_line Coverage Results" MODIFIED="1686085532806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS" />
+    <SUITE FILE_PATH="coverage/recommender_system$recommender.coverage" NAME="recommender Coverage Results" MODIFIED="1686493722502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/FilteringComponent" />
+    <SUITE FILE_PATH="coverage/recommender_system$embed_papers.coverage" NAME="embed_papers Coverage Results" MODIFIED="1686491267773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
+    <SUITE FILE_PATH="coverage/recommender_system$read_citations.coverage" NAME="read_citations Coverage Results" MODIFIED="1684773041328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
+    <SUITE FILE_PATH="coverage/recommender_system$sql.coverage" NAME="sql Coverage Results" MODIFIED="1685719183770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/venv_py3.7/lib/python3.7/site-packages/pandas/io" />
+    <SUITE FILE_PATH="coverage/recommender_system$initialize_databases.coverage" NAME="initialize_databases Coverage Results" MODIFIED="1686496488245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS" />
+    <SUITE FILE_PATH="coverage/recommender_system$time_line.coverage" NAME="time_line Coverage Results" MODIFIED="1686495429720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS" />
     <SUITE FILE_PATH="coverage/recommender_system$writeToContentDatabase.coverage" NAME="writeToContentDatabase Coverage Results" MODIFIED="1685626263744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
+    <SUITE FILE_PATH="coverage/recommender_system$bulk_download.coverage" NAME="bulk_download Coverage Results" MODIFIED="1686417353706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/RawSource" />
     <SUITE FILE_PATH="coverage/recommender_system$WriteToDatabase.coverage" NAME="writeToContentDatabase Coverage Results" MODIFIED="1685482958975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
     <SUITE FILE_PATH="coverage/recommender_system$cosine_similarity.coverage" NAME="cosine_similarity Coverage Results" MODIFIED="1686069881192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/FilteringComponent" />
     <SUITE FILE_PATH="coverage/recommender_system$writeToProfileDatabase.coverage" NAME="ProfileDB Coverage Results" MODIFIED="1685968488403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
     <SUITE FILE_PATH="coverage/recommender_system$ItemDataBase.coverage" NAME="ItemDatabase Coverage Results" MODIFIED="1684527902711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
-    <SUITE FILE_PATH="coverage/recommender_system$DownloadRawSource.coverage" NAME="DownloadRawSource Coverage Results" MODIFIED="1685540270673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/RawSource" />
-    <SUITE FILE_PATH="coverage/recommender_system$read_citations.coverage" NAME="read_citations Coverage Results" MODIFIED="1684773041328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
-    <SUITE FILE_PATH="coverage/recommender_system$sql.coverage" NAME="sql Coverage Results" MODIFIED="1685719183770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/venv_py3.7/lib/python3.7/site-packages/pandas/io" />
+    <SUITE FILE_PATH="coverage/recommender_system$DownloadRawSource.coverage" NAME="search_machine_learning Coverage Results" MODIFIED="1686426822527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/RawSource" />
     <SUITE FILE_PATH="coverage/recommender_system$ProfileDatabase.coverage" NAME="ProfileDatabase Coverage Results" MODIFIED="1684533005469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ProfileLearner" />
     <SUITE FILE_PATH="coverage/recommender_system$manager1.coverage" NAME="manager_1 Coverage Results" MODIFIED="1684194829795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MANAGERS" />
-    <SUITE FILE_PATH="coverage/recommender_system$ContentDB.coverage" NAME="ContentDB Coverage Results" MODIFIED="1685971101544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
+    <SUITE FILE_PATH="coverage/recommender_system$ContentDB.coverage" NAME="content_db Coverage Results" MODIFIED="1686338282687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ContentBasedRS/ContentAnalyzer" />
   </component>
 </project>
