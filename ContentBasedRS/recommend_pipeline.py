@@ -117,14 +117,12 @@ def recommend_after_feedback(author_id=4565995):
     print("---------------------------------------")
 
 
-# test_create_paper_database()
 
-# test_create_author_database()
 
-# order_by_cosine_similarity()
+order_by_cosine_similarity()
 
-# order_by_numerical_field()
+order_by_numerical_field()
 
-# ensemble()
+ensemble()
 
 recommend_after_feedback()

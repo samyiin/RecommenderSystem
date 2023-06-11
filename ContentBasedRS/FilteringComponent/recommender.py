@@ -60,8 +60,7 @@ class Recommender:
                 select *, LINEAR_COMBINATION_SCORE(cos_rank, ref_rank, cite_rank, inf_cite_rank) as rank
                 from(
                     select *, 
-                    row_n
-                    umber() over (order by similarity desc) cos_rank,
+                    row_number() over (order by similarity desc) cos_rank,
                     row_number() over (order by {self.contentDB.COL_REF_COUNT} desc) ref_rank,
                     row_number() over (order by {self.contentDB.COL_CITE_COUNT} desc) cite_rank,
                     row_number() over (order by {self.contentDB.COL_INFLUENTIAL_CITE_COUNT} desc) inf_cite_rank 
