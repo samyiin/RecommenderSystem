@@ -7,8 +7,7 @@ import numpy as np
 embedding_model = 'text-embedding-ada-002'  # cheapest option, 8k token at a time
 text_len_limit = 5500  # 8191 tokens roughly equals to 5600 words
 segment_length = text_len_limit
-my_openai_private_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = my_openai_private_key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def embed_short_text(text_string) -> np.ndarray:
