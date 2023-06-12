@@ -12,7 +12,7 @@ class Recommender:
         self.recommend_number = 10
 
     def search_engine(self, keywords):
-        keyword_embedding = embed_long_text(keywords)
+        keyword_embedding = self.contentDB.embed_long_text(keywords)
         return self.vector_similarity(keyword_embedding, exclude_known_papers=[])
 
     def vector_similarity(self, embedding_vector, exclude_known_papers):

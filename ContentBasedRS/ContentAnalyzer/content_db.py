@@ -21,8 +21,9 @@ class ContentDB:
         self.OPENAI_EMBEDDING_TABLE_NAME = "openAI"
         self.SPECTER_EMBEDDING_TABLE_NAME = "specter"
         # self.EMBEDDING_TABLE = self.SPECTER_EMBEDDING_TABLE_NAME    # a mapping from paper id to embedding
+        # self.embed_long_text = SPECTEREmbedding.embed_long_text
         self.EMBEDDING_TABLE = self.OPENAI_EMBEDDING_TABLE_NAME    # a mapping from paper id to embedding
-
+        self.embed_long_text = OpenAIEmbedding.embed_long_text
 
         # column names for the main table
         self.COL_PAPER_ID = 'paperId'
