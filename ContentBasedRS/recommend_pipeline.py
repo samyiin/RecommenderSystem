@@ -116,13 +116,22 @@ def recommend_after_feedback(author_id=4565995):
     recommend = recommender.vector_similarity(author_embedding, exclude_known_papers)
     print("---------------------------------------")
 
+def recommend_by_search():
+    # connect to contentDB and profile db
+    profileDB = ProfileDB()
+    contentDB = ContentDB()
 
+    # search the keyword
+    recommender = Recommender(contentDB, profileDB)
+    recommend = recommender.search_engine("AI application in medicine")
+    print("---------------------------------------")
 
-
-order_by_cosine_similarity()
-
+# order_by_cosine_similarity()
+#
 order_by_numerical_field()
+#
+# ensemble()
+#
+# recommend_after_feedback()
 
-ensemble()
-
-recommend_after_feedback()
+# recommend_by_search()

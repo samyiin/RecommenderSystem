@@ -130,16 +130,16 @@ def apply_embedding_to_row():
     papers_df = pd.read_sql(query, contentDB.conn)
 
     # for SPECTER embedding
-    # papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(SPECTURE_EMBEDDING, axis=1)
-    # papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
-    # papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
-    # papers_df.to_sql(contentDB.SPECTER_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
-
-    # for OpenAI embedding can't run with SPECTER embedding
-    papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
+    papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(SPECTURE_EMBEDDING, axis=1)
     papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
     papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
-    papers_df.to_sql(contentDB.OPENAI_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
+    papers_df.to_sql(contentDB.SPECTER_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
+
+    # for OpenAI embedding can't run with SPECTER embedding
+    # papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
+    # papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
+    # papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
+    # papers_df.to_sql(contentDB.OPENAI_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
 
 S2_API_KEY = os.getenv('S2_API_KEY')  # export S2_API_KEY=xxxxx (no space for equal sign)
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -149,17 +149,17 @@ pandarallel.initialize()
 profileDB = ProfileDB()
 contentDB = ContentDB()
 
-initialize_paper_database()
-contentDB.commit_change()
-profileDB.commit_change()
-
-initialize_author_database()
-contentDB.commit_change()
-profileDB.commit_change()
-
-create_embedding_table()
-contentDB.commit_change()
-profileDB.commit_change()
+# initialize_paper_database()
+# contentDB.commit_change()
+# profileDB.commit_change()
+#
+# initialize_author_database()
+# contentDB.commit_change()
+# profileDB.commit_change()
+#
+# create_embedding_table()
+# contentDB.commit_change()
+# profileDB.commit_change()
 
 apply_embedding_to_row()
 contentDB.commit_change()

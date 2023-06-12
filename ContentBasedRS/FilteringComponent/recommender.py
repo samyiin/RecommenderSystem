@@ -11,7 +11,9 @@ class Recommender:
         self.profileDB = profileDB
         self.recommend_number = 10
 
-
+    def search_engine(self, keywords):
+        keyword_embedding = embed_long_text(keywords)
+        return self.vector_similarity(keyword_embedding, exclude_known_papers=[])
 
     def vector_similarity(self, embedding_vector, exclude_known_papers):
         def COSINE_SIMILARITY(vector_binary):
