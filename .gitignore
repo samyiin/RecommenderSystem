@@ -1,6 +1,8 @@
 Content.db
 Profile.db
-ContentBasedRS/RawSource/*
+ContentBasedRS/RawSource/papers_backup
+ContentBasedRS/RawSource/papers
+ContentBasedRS/RawSource/bulk_download
 ContentBasedRS/cache_function_call/*
 .idea/*
 *.pdf
