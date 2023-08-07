@@ -110,18 +110,17 @@ profileDB = ProfileDB()
 contentDB = ContentDB()
 
 
-# def initialize():
-#     add_papers_to_content_db()
-#
-#     add_authors_to_profile_db()
-#
-#
-#     create_embedding_table()
-#     contentDB.commit_change()
-#     profileDB.commit_change()
-#
-#     apply_embedding_to_row()
-#     contentDB.commit_change()
-#     profileDB.commit_change()
+def initialize():
+    add_papers_to_content_db()
+
+    add_authors_to_profile_db()
+
+    create_embedding_table()
+    contentDB.commit_change()
+    profileDB.commit_change()
+
+    apply_embedding_to_row()
+    contentDB.commit_change()
+    profileDB.commit_change()
 
 
