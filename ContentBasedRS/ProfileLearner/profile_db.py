@@ -6,7 +6,7 @@ create_author_table: create an empty author table in the database, erase old aut
 add_default_authors: generate author profile from papers in ContentDB, and add to ProfileDB
 update_author: add a new author(user) to ProfileDB
 """
-
+import os
 import pickle
 import sqlite3
 
@@ -19,7 +19,9 @@ from ContentBasedRS.Utils import *
 
 class ProfileDB:
     def __init__(self):
-        self.my_database = 'ContentBasedRS/Profile.db'
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+
+        self.my_database = os.path.join(current_dir, '../Profile.db')
 
         self.MAIN_TABLE_NAME = "author"
 

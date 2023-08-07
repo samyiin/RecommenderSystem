@@ -20,7 +20,8 @@ from joblib import Memory
 
 def add_papers_to_content_db():
     contentDB.create_main_table()
-    raw_paper_dir = '/cs/labs/avivz/hsiny/recommender_system/ContentBasedRS/RawSource/papers'
+    my_dir = os.path.abspath(os.path.dirname(__file__))
+    raw_paper_dir = os.path.join(my_dir, 'RawSource/papers')
     contentDB.add_papers_to_db(raw_paper_dir)
 
 
@@ -96,7 +97,9 @@ def apply_embedding_to_row():
     papers_df = pd.read_sql(query, contentDB.conn)
 
     # for OpenAI embedding can't run with SPECTER embedding
-    papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
+    # some times python crashes when parallel apply, so use regular apply
+    # papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
+    papers_df[contentDB.COL_EMBEDDING] = papers_df.apply(OPENAI_EMBEDDING, axis=1)
     papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
     papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
     papers_df.to_sql(contentDB.OPENAI_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
@@ -122,5 +125,15 @@ def initialize():
     apply_embedding_to_row()
     contentDB.commit_change()
     profileDB.commit_change()
+
+
+"""
+put OPENAI_API_KEY into your env variables before you run, else it will fail, unless you have cached function calls. 
+Warning! 
+Initialize database cost about half an hour, and also it cost about half a dollar. Also the saved user data will be 
+lost.
+"""
+if __name__ == "__main__":
+    initialize()
 
 

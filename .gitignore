@@ -1,9 +1,20 @@
 Content.db
 Profile.db
 ContentBasedRS/RawSource/papers_backup
-ContentBasedRS/RawSource/papers
+ContentBasedRS/RawSource/papers/*
 ContentBasedRS/RawSource/bulk_download
 ContentBasedRS/cache_function_call/*
 .idea/*
 *.pdf
+ContentBasedRS/.DS_Store
+ContentBasedRS/ContentAnalyzer/__pycache__/__init__.cpython-38.pyc
+ContentBasedRS/ContentAnalyzer/__pycache__/content_db.cpython-38.pyc
+ContentBasedRS/FilteringComponent/__pycache__/__init__.cpython-38.pyc
+ContentBasedRS/FilteringComponent/__pycache__/recommender.cpython-38.pyc
+ContentBasedRS/ProfileLearner/__pycache__/__init__.cpython-38.pyc
+ContentBasedRS/ProfileLearner/__pycache__/profile_db.cpython-38.pyc
+ContentBasedRS/Utils/__pycache__/OpenAIEmbedding.cpython-38.pyc
+ContentBasedRS/Utils/__pycache__/__init__.cpython-38.pyc
+ContentBasedRS/Utils/__pycache__/encrypt_message.cpython-38.pyc
+ContentBasedRS/__pycache__/__init__.cpython-38.pyc
 

@@ -43,7 +43,8 @@ class ContentDB:
         self.ATTR_AUTHORS_ID = 'authorId'
         self.ATTR_AUTHORS_NAME = 'name'
 
-        self.my_database = 'ContentBasedRS/Content.db'
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+        self.my_database = os.path.join(current_dir, '../Content.db')
         self.open_connection()
 
     def __del__(self):
