@@ -68,3 +68,18 @@ There are three changes:
     citation
 5.
 
+========================================================================================================================
+today I decided to make a little modifications on the API of database. The database classes should act as a high level
+interface for interacting with the database, so it shouldn't be the caller's responsibility to decode the stored data.
+So from now on, the query_database method will return a decoded pandas dataframe.
+
+And also recommender should act as a high level interface for tasks. It should encapsulate the task, do the database
+query internally. So it shouldn't be the caller's responsibility to  first get author's embedding, and the told the
+recommender to recommend based on the embedding. If you want you can build a tool box for recommender to use, such as
+strategies for recommending.
+
+Thanks to find usages, I gets to change the api without too much effort.
+
+========================================================================================================================
+1. run remotely on aqua computer
+2. run on a normal computer - github

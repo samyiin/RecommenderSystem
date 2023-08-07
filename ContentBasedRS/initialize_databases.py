@@ -3,6 +3,7 @@ initialization: This should only run once!
 why don't I do it by database? because it's web request so we need parallel request
 
 """
+import numpy as np
 
 from ContentBasedRS.ContentAnalyzer import *
 from ContentBasedRS.ProfileLearner import *
@@ -17,14 +18,13 @@ from ContentBasedRS.ContentAnalyzer import *
 from joblib import Memory
 
 
-def initialize_paper_database():
-    contentDB = ContentDB()
+def add_papers_to_content_db():
     contentDB.create_main_table()
     raw_paper_dir = '/cs/labs/avivz/hsiny/recommender_system/ContentBasedRS/RawSource/papers'
     contentDB.add_papers_to_db(raw_paper_dir)
 
 
-def initialize_author_database():
+def add_authors_to_profile_db():
     def _record_default_authors(row, args):
         """
         This is a callback for pandas dataframe.
@@ -56,50 +56,16 @@ def create_embedding_table():
     """Don't want to bother write modularity here, just uncomment TABLE_NAME to the table you want to initialize"""
 
     # for openAI embedding
-    query = f'''DROP TABLE IF EXISTS {contentDB.OPENAI_EMBEDDING_TABLE_NAME};'''
+    query = f'''DROP TABLE IF EXISTS {contentDB.EMBEDDING_TABLE};'''
     contentDB.cursor.execute(query)
 
     query = f'''
-            CREATE TABLE {contentDB.OPENAI_EMBEDDING_TABLE_NAME} (
+            CREATE TABLE {contentDB.EMBEDDING_TABLE} (
             {contentDB.COL_PAPER_ID} TEXT PRIMARY KEY,
             {contentDB.COL_EMBEDDING} BLOB
             )
             '''
     contentDB.cursor.execute(query)
-
-    # for specter embedding
-    query = f'''DROP TABLE IF EXISTS {contentDB.SPECTER_EMBEDDING_TABLE_NAME};'''
-    contentDB.cursor.execute(query)
-
-    query = f'''
-                CREATE TABLE {contentDB.SPECTER_EMBEDDING_TABLE_NAME} (
-                {contentDB.COL_PAPER_ID} TEXT PRIMARY KEY,
-                {contentDB.COL_EMBEDDING} BLOB
-                )
-                '''
-    contentDB.cursor.execute(query)
-
-
-"""cache_function_call the result here so we don't need to request again..."""
-cache_dir = 'cache_function_call/specter'
-memory = Memory(cache_dir)
-
-
-@memory.cache
-def SPECTURE_EMBEDDING(row):
-    """will return a one dimensional list"""
-    # todo fake, set title to be id here for request from semantic shcolar
-    fields = "embedding"
-    # time.sleep(0.01)     # in case too much request
-    paper_id = row[contentDB.COL_PAPER_ID]
-    print(paper_id)
-    rsp = requests.get('https://api.semanticscholar.org/graph/v1/paper/' + paper_id,
-                       headers={'x-api-key': S2_API_KEY},
-                       params={'fields': fields})
-    rsp.raise_for_status()
-    results = rsp.json()
-    embedding = results['embedding']['vector']
-    return info_to_BLOB(embedding)
 
 
 cache_dir = 'cache_function_call/openAi'
@@ -113,7 +79,7 @@ def OPENAI_EMBEDDING(row):
     content = title
     if abstract is not None:
         content += abstract
-    embedding = embed_long_text(content)
+    embedding = OpenAIEmbedding.embed_long_text(content)
     return info_to_BLOB(embedding)
 
 
@@ -129,38 +95,33 @@ def apply_embedding_to_row():
             """
     papers_df = pd.read_sql(query, contentDB.conn)
 
-    # for SPECTER embedding
-    papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(SPECTURE_EMBEDDING, axis=1)
+    # for OpenAI embedding can't run with SPECTER embedding
+    papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
     papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
     papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
-    papers_df.to_sql(contentDB.SPECTER_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
+    papers_df.to_sql(contentDB.OPENAI_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
+    print("successfully added open-ai embedding!")
 
-    # for OpenAI embedding can't run with SPECTER embedding
-    # papers_df[contentDB.COL_EMBEDDING] = papers_df.parallel_apply(OPENAI_EMBEDDING, axis=1)
-    # papers_df = papers_df[[contentDB.COL_PAPER_ID, contentDB.COL_EMBEDDING]]
-    # papers_df.set_index(contentDB.COL_PAPER_ID, inplace=True)
-    # papers_df.to_sql(contentDB.OPENAI_EMBEDDING_TABLE_NAME, contentDB.conn, if_exists='append')  # handling replicate
 
-S2_API_KEY = os.getenv('S2_API_KEY')  # export S2_API_KEY=xxxxx (no space for equal sign)
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 pandarallel.initialize()
 
 # connect to databases
 profileDB = ProfileDB()
 contentDB = ContentDB()
 
-# initialize_paper_database()
-# contentDB.commit_change()
-# profileDB.commit_change()
-#
-# initialize_author_database()
-# contentDB.commit_change()
-# profileDB.commit_change()
-#
-# create_embedding_table()
-# contentDB.commit_change()
-# profileDB.commit_change()
 
-apply_embedding_to_row()
-contentDB.commit_change()
-profileDB.commit_change()
+# def initialize():
+#     add_papers_to_content_db()
+#
+#     add_authors_to_profile_db()
+#
+#
+#     create_embedding_table()
+#     contentDB.commit_change()
+#     profileDB.commit_change()
+#
+#     apply_embedding_to_row()
+#     contentDB.commit_change()
+#     profileDB.commit_change()
+
+

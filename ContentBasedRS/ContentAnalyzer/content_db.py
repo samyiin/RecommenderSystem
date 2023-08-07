@@ -6,7 +6,6 @@ import sqlite3
 import pandas as pd
 import json
 
-
 from ContentBasedRS.Utils import *
 
 
@@ -19,11 +18,10 @@ class ContentDB:
         self.MAIN_TABLE_NAME = 'paper'
         self.TEMP_TABLE_NAME = 'tempTable'
         self.OPENAI_EMBEDDING_TABLE_NAME = "openAI"
-        self.SPECTER_EMBEDDING_TABLE_NAME = "specter"
-        # self.EMBEDDING_TABLE = self.SPECTER_EMBEDDING_TABLE_NAME    # a mapping from paper id to embedding
-        # self.embed_long_text = SPECTEREmbedding.embed_long_text
-        self.EMBEDDING_TABLE = self.OPENAI_EMBEDDING_TABLE_NAME    # a mapping from paper id to embedding
+
+        self.EMBEDDING_TABLE = self.OPENAI_EMBEDDING_TABLE_NAME  # a mapping from paper id to embedding
         self.embed_long_text = OpenAIEmbedding.embed_long_text
+        self.embed_short_text = OpenAIEmbedding.embed_short_text
 
         # column names for the main table
         self.COL_PAPER_ID = 'paperId'
@@ -59,18 +57,18 @@ class ContentDB:
     def commit_change(self):
         # Commit the changes to the database
         self.conn.commit()
-        print("committed changes")
+        print("content database committed changes")
 
     def open_connection(self):
         self.conn = sqlite3.connect(self.my_database)
         self.cursor = self.conn.cursor()
-        print("established connection!")
+        print("content database established connection!")
 
     def close_connection(self):
         # Close the cursor and the database connection
         self.cursor.close()
         self.conn.close()
-        print("closed connection")
+        print("content database closed connection")
 
     def query_database(self, query):
         """
@@ -78,16 +76,19 @@ class ContentDB:
         return a iterator of queried result, and the column number
         """
         self.cursor.execute(query)
-        return self.cursor.fetchall(), [column[0] for column in self.cursor.description]
+        result, columns = self.cursor.fetchall(), [column[0] for column in self.cursor.description]
+        final_result = pd.DataFrame(result, columns=columns)
+        final_result = final_result.apply(self._decode, axis=1)
+        return final_result
 
+    def _decode(self, row):
+        if self.COL_AUTHORS in row:
+            row[self.COL_AUTHORS] = BLOB_to_info(row[self.COL_AUTHORS])
+        if self.COL_REFERENCE in row:
+            row[self.COL_REFERENCE] = BLOB_to_info(row[self.COL_REFERENCE])
+        return row
 
     # ----------------------------------------initialize functions------------------------------------------------------
-    # todo should make a tool file
-    # def _give_paper_embedding(self, paper_df):
-    #     def random_embedding(row):
-    #         return np.random.rand(1536, )
-    #     paper_df[self.COL_EMBEDDING] = paper_df.apply(random_embedding, axis=1)
-    #     return paper_df
 
     def create_main_table(self):
         """
@@ -118,10 +119,6 @@ class ContentDB:
         # Execute the SQL query to create the table
         self.cursor.execute(query)
 
-
-
-
-
     # -----------------------------------------------API functions------------------------------------------------------
     def add_papers_to_db(self, raw_source_dir):
         for filename in os.listdir(raw_source_dir):
@@ -134,11 +131,11 @@ class ContentDB:
             papers_df[self.COL_AUTHORS] = papers_df[self.COL_AUTHORS].apply(info_to_BLOB)
             papers_df.set_index(self.COL_PAPER_ID, inplace=True)
             # output directly from pandas to database
-            papers_df.to_sql(self.TEMP_TABLE_NAME, self.conn, if_exists='replace')   # handling replicate
+            papers_df.to_sql(self.TEMP_TABLE_NAME, self.conn, if_exists='replace')  # handling replicate
 
             self.cursor.execute(f"SELECT * FROM {self.TEMP_TABLE_NAME}")
             self.cursor.execute(f"INSERT OR IGNORE INTO {self.MAIN_TABLE_NAME} SELECT * FROM {self.TEMP_TABLE_NAME}")
-            print(f"{filename} success!")
+            print(f"{filename} successfully added to content database!")
 
     def for_each_row_do(self, callback, args, table='paper'):
         """
@@ -152,7 +149,20 @@ class ContentDB:
         while row is not None:
             callback(row, args)
             row = self.cursor.fetchone()
-            print(counter)
             counter += 1
 
-# ---------------------------------------------test initialize----------------------------------------------------------
+    def get_papers_by_id_set(self, id_set):
+        id_set = {"\"" + paper_id + "\"" for paper_id in id_set}
+        id_string = ",".join(id_set)
+        query = f"""SELECT * FROM {self.MAIN_TABLE_NAME} 
+                    WHERE {self.COL_PAPER_ID} in ({id_string})
+                """
+        known_papers_df = self.query_database(query)
+        return known_papers_df
+
+    def get_row_by_id(self, paper_id):
+        result = self.query_database(
+            f"select * from {self.MAIN_TABLE_NAME} where {self.COL_PAPER_ID} = {paper_id}")
+        if result.empty:
+            raise ValueError("This author doesn't exist!")
+        return result
