@@ -19,7 +19,7 @@ from ContentBasedRS.Utils import *
 
 class ProfileDB:
     def __init__(self):
-        self.my_database = '/cs/labs/avivz/hsiny/recommender_system/Profile.db'
+        self.my_database = 'ContentBasedRS/Profile.db'
 
         self.MAIN_TABLE_NAME = "author"
 

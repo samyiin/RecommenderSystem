@@ -10,9 +10,9 @@ profile_db = ProfileDB()
 recommender = Recommender(content_db, profile_db)
 
 # ---------------------------------------------cahced fp----------------------------------------------------------------
-cached_recommendation_file_path = "cache_function_call/cached_recommendation.pkl"
-cached_author_name_list_file_path = "cache_function_call/cached_author_name_list.pkl"
-cached_advanced_recommendation_file_path = "cache_function_call/cached_advanced_recommendation.pkl"
+cached_recommendation_file_path = "ContentBasedRS/cache_function_call/cached_recommendation.pkl"
+cached_author_name_list_file_path = "ContentBasedRS/cache_function_call/cached_author_name_list.pkl"
+cached_advanced_recommendation_file_path = "ContentBasedRS/cache_function_call/cached_advanced_recommendation.pkl"
 
 
 # ----------------------------------------------------------------------------------------------------------------------

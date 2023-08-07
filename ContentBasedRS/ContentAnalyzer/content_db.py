@@ -43,7 +43,7 @@ class ContentDB:
         self.ATTR_AUTHORS_ID = 'authorId'
         self.ATTR_AUTHORS_NAME = 'name'
 
-        self.my_database = '/cs/labs/avivz/hsiny/recommender_system/Content.db'
+        self.my_database = 'ContentBasedRS/Content.db'
         self.open_connection()
 
     def __del__(self):
