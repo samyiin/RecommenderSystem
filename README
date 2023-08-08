@@ -4,6 +4,10 @@ papers in the field of "Machine Learning", that are pulled from Semantic Scholar
 The author of this project is Hsin-Chun Yin, under the instruction of professor Aviv Zohar and professor Katrina Ligett.
 All the data have been saved under Hebrew University's Computer, under path:
 cs/labs/avivz/hsiny/recommender_system
+
+a description for the the project is on google docs:
+https://docs.google.com/document/d/1OSl7D160tUTR4pIoEWPVzFjFi8akrlrV3NgUYsZ2ALE/edit?usp=sharing
+
 If one wishes to run this project on his own computer here are the steps to follow:
 
 Step 1: Clone the git repo and download the requirements.txt. It's suggested to install the packages under a venv
