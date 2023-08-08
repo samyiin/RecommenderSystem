@@ -23,12 +23,16 @@ Step 3: Download data source
     A sample code of requesting from Semantic Scholar is in (remember to add S2_API_KEY to $PATH):
     ContentBasedRS/RawSource/download_requests.py
 
+    I also provide my 10,000 papers that I download, under the google drive:
+    https://drive.google.com/drive/folders/1rse7hJmeHeAiX2d_Nd5T6Uj01B69W_Bx?usp=sharing
+
 Step 4: Initialize the databases
     To initialize the project, the next step is to initialize the databases, simply and run the script:
     ContentBasedRS/initialize_databases.py
 
     This process might take about half an hour, and costs about half a dollar per 10,000 papers. Notice: this process
-    won't work if one didn't input valid OpenAI API key.
+    won't work if one didn't input valid OpenAI API key. And if one successfully run the initialization, all the
+    function calls of OpenAI will be cached, so it won't cost money next time.
 
 Step 5: Run the project
     At the content root directory (the root of the project), run the following script:
@@ -38,7 +42,7 @@ Step 5: Run the project
 ========================================================================================================================
 How to use the project:
 The explanation of the user interface will be in the video:
-<my youtube video>
+https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 
 How does the project work:
 I set up a database for the papers, using sqlite. And based on the paper database, I created a profile database, which
@@ -58,6 +62,10 @@ cosine similarity:
     that author write and referenced, and calculate average of embeddings of those papers, and then we will sort the
     papers in the content database by the cosine similarity between the paper's embedding and the average embedding, and
     recommend the top 10.
+
+    Also one can chose papers he like, after the program recommended. Then the liked papers will also be used to
+    calculate the average embedding that "represents" the author. So once the user add a new liked paper, the
+    recommendation to him will change.
 
 sort by field:
     Simply sort all papers by a certain field, such as published date, and recommend the top 10.

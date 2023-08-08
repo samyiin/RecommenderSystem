@@ -5,7 +5,6 @@ ContentBasedRS/RawSource/papers/*
 ContentBasedRS/RawSource/bulk_download
 ContentBasedRS/cache_function_call/*
 .idea/*
-*.pdf
 ContentBasedRS/.DS_Store
 ContentBasedRS/ContentAnalyzer/__pycache__/__init__.cpython-38.pyc
 ContentBasedRS/ContentAnalyzer/__pycache__/content_db.cpython-38.pyc
