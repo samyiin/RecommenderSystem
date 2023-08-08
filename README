@@ -61,6 +61,8 @@ Step 3: run the following commands to start the program:
 
 Or alternatively for step 2 and 3: just run the following command:
     sh run_the_app.sh
+Or run
+    sh run_the_app.sh new_venv
 
 
 =======================================================================================================================
