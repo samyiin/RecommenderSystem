@@ -51,7 +51,7 @@ https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 Here is the instruction on how to run the project on Hebrew University aquarium computers:
 Step 1: move to /cs/labs/avivz/hsiny/recommender_system
 Step 2: Only if you haven't set up the virtual environment for your computer, then run the following command:
-    python -m my_venv
+    python -m venv my_venv
     source my_venv/bin/activate.csh
     pip install -r requirements.txt
     deactivate
