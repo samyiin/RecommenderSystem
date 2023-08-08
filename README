@@ -43,10 +43,28 @@ Step 5: Run the project
     streamlit run user_interface.py
 
 
-========================================================================================================================
+=======================================================================================================================
 How to use the project:
 The explanation of the user interface will be in the video:
 https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
+
+Here is the instruction on how to run the project on Hebrew University aquarium computers:
+Step 1: move to /cs/labs/avivz/hsiny/recommender_system
+Step 2: Only if you haven't set up the virtual environment for your computer, then run the following command:
+    python -m my_venv
+    source my_venv/bin/activate.csh
+    pip install -r requirements.txt
+    deactivate
+Step 3: run the following commands to start the program:
+    source my_venv/bin/activate.csh
+    streamlit run user_interface.py
+
+Or alternatively for step 2 and 3: just run the following command:
+    sh run_the_app.sh
+
+
+=======================================================================================================================
+
 
 How does the project work:
 I set up a database for the papers, using sqlite. And based on the paper database, I created a profile database, which
