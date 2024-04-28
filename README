@@ -1,23 +1,27 @@
+# Recommender System for Academic Papers
 This project is a recommender system for research papers. Util the time this README is written, it contains 10,000
 papers in the field of "Machine Learning", that are pulled from Semantic Scholar.
 
+## Authors
 The author of this project is Hsin-Chun Yin, under the instruction of professor Aviv Zohar and professor Katrina Ligett.
 All the data have been saved under Hebrew University's Computer, under path:
 cs/labs/avivz/hsiny/recommender_system
 
+## Project Description
 a description for the the project is on google docs:
 https://docs.google.com/document/d/1OSl7D160tUTR4pIoEWPVzFjFi8akrlrV3NgUYsZ2ALE/edit?usp=sharing
 
+## How to run
 If one wishes to run this project on his own computer here are the steps to follow:
 
-Step 1: Clone the git repo and download the requirements.txt. It's suggested to install the packages under a venv
+**Step 1:** Clone the git repo and download the requirements.txt. It's suggested to install the packages under a venv
 
-Step 2: Set up environment variables
+**Step 2:** Set up environment variables
     One should add his Semantic Scholar API key under the environment variable name S2_API_KEY
 
     One should add his OpenAI API key under the environment variable name OPENAI_API_KEY
 
-Step 3: Download data source
+**Step 3:** Download data source
     To initialize the project, one needs to download all the papers from Semantic Scholar, and put them under path:
     ContentBasedRS/RawSource/papers
 
@@ -30,7 +34,7 @@ Step 3: Download data source
     I also provide my 10,000 papers that I download, under the google drive:
     https://drive.google.com/drive/folders/1rse7hJmeHeAiX2d_Nd5T6Uj01B69W_Bx?usp=sharing
 
-Step 4: Initialize the databases
+**Step 4:** Initialize the databases
     To initialize the project, the next step is to initialize the databases, simply and run the script:
     ContentBasedRS/initialize_databases.py
 
@@ -38,24 +42,24 @@ Step 4: Initialize the databases
     won't work if one didn't input valid OpenAI API key. And if one successfully run the initialization, all the
     function calls of OpenAI will be cached, so it won't cost money next time.
 
-Step 5: Run the project
+**Step 5:** Run the project
     At the content root directory (the root of the project), run the following script:
     streamlit run user_interface.py
 
 
-=======================================================================================================================
-How to use the project:
+## How to use the project:
 The explanation of the user interface will be in the video:
 https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 
+## How to run on Hebrew University's computer:
 Here is the instruction on how to run the project on Hebrew University aquarium computers:
-Step 1: move to /cs/labs/avivz/hsiny/recommender_system
-Step 2: Only if you haven't set up the virtual environment for your computer, then run the following command:
+**Step 1:** move to /cs/labs/avivz/hsiny/recommender_system
+**Step 2:** Only if you haven't set up the virtual environment for your computer, then run the following command:
     python -m venv my_venv
     source my_venv/bin/activate.csh
     pip install -r requirements.txt
     deactivate
-Step 3: run the following commands to start the program:
+**Step 3:** run the following commands to start the program:
     source my_venv/bin/activate.csh
     streamlit run user_interface.py
 
@@ -68,13 +72,13 @@ Or run
 =======================================================================================================================
 
 
-How does the project work:
+## How does the project work:
 I set up a database for the papers, using sqlite. And based on the paper database, I created a profile database, which
 contains the author id and name of all the authors of all the papers. Then for each author, I add all the papers he
 wrote and referenced to his profile. For each paper, I use it's title and abstract to create an vector embedding through
 OpenAI's embedding service.
 
-How does it recommend to the users:
+### How does it recommend to the users:
 There are primarily 3 ways of recommending:
 
 cosine similarity:
