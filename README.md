@@ -14,21 +14,21 @@ as well as instruction video for the project:
 https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 
 ## How to run
-If one wishes to run this project on his own computer here are the steps to follow:
+If you wishes to run this project on your own computer here are the steps to follow:
 
-**Step 1:** Clone the git repo and download the requirements.txt. It's suggested to install the packages under a venv
+**Step 1:** Clone the git repo and download the requirements.txt.  
 
 **Step 2:** Set up environment variables  
-One should add his Semantic Scholar API key under the environment variable name S2_API_KEY
+You should add your Semantic Scholar API key under the environment variable name S2_API_KEY
 
-One should add his OpenAI API key under the environment variable name OPENAI_API_KEY
+You should add your OpenAI API key under the environment variable name OPENAI_API_KEY
 
 **Step 3:** Download data source
-To initialize the project, one needs to download all the papers from Semantic Scholar, and put them under path:
+To initialize the project, you needs to download all the papers from Semantic Scholar, and put them under path:
     
     ContentBasedRS/RawSource/papers
 
-One may download papers of any field, but the papers must contain the following fields:
+You may download papers of any field, but the papers must contain the following fields:
     
     paperId,title,authors,abstract,references.paperId,year,referenceCount,citationCount,influentialCitationCount
 
@@ -45,7 +45,7 @@ To initialize the project, the next step is to initialize the databases, simply 
     
     ContentBasedRS/initialize_databases.py
 
-This process might take about half an hour, and costs about half a dollar per 10,000 papers. Notice: this process won't work if one didn't input valid OpenAI API key. And if one successfully run the initialization, all the function calls of OpenAI will be cached, so it won't cost money next time.
+This process might take about half an hour, and costs about half a dollar per 10,000 papers. Notice: this process won't work if you didn't input valid OpenAI API key. And if you successfully run the initialization, all the function calls of OpenAI will be cached, so it won't cost money next time.
 
 **Step 5:** Run the project
 At the content root directory (the root of the project), run the following script:
