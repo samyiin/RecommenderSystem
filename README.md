@@ -9,7 +9,9 @@ cs/labs/avivz/hsiny/recommender_system
 
 ## Project Description
 a description for the the project is on google docs:
-https://docs.google.com/document/d/1OSl7D160tUTR4pIoEWPVzFjFi8akrlrV3NgUYsZ2ALE/edit?usp=sharing
+https://docs.google.com/document/d/1OSl7D160tUTR4pIoEWPVzFjFi8akrlrV3NgUYsZ2ALE/edit?usp=sharing   
+as well as instruction video for the project:  
+https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 
 ## How to run
 If one wishes to run this project on his own computer here are the steps to follow:
@@ -51,9 +53,7 @@ At the content root directory (the root of the project), run the following scrip
     streamlit run user_interface.py
 
 
-## How to use the project:
-The explanation of the user interface will be in the video:
-https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
+
 
 ## How to run on Hebrew University's computer:
 Here is the instruction on how to run the project on Hebrew University aquarium computers:
