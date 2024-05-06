@@ -9,9 +9,11 @@ cs/labs/avivz/hsiny/recommender_system
 
 ## Project Description
 a description for the the project is on google docs:
-https://docs.google.com/document/d/1OSl7D160tUTR4pIoEWPVzFjFi8akrlrV3NgUYsZ2ALE/edit?usp=sharing   
+
+    https://docs.google.com/document/d/1EK_9QxUY9jT1OrBiUZj2YqFGdfNEF67ETcktzGHHUDA/edit?usp=sharing
 as well as instruction video for the project:  
-https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
+
+    https://www.youtube.com/watch?v=4E4XfvXzOOo&ab_channel=Hsin-ChuYin
 
 ## How to run
 If you wishes to run this project on your own computer here are the steps to follow:
@@ -38,8 +40,7 @@ A sample code of requesting from Semantic Scholar is in (remember to add S2_API_
 
 I also provide my 10,000 papers that I download, under the google drive:
     
-    https://drive.google.com/drive/folders/1rse7hJmeHeAiX2d_Nd5T6Uj01B69W_Bx?usp=sharing
-
+    https://drive.google.com/drive/folders/1x2roMv-mMj2TURdzJJi9dpXAT6ODFMu4?usp=sharing
 **Step 4:** Initialize the databases
 To initialize the project, the next step is to initialize the databases, simply and run the script:
     
